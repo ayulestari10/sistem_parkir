@@ -1,10 +1,10 @@
-<?php 
+<?php
 class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Admin_model');
 		$this->load->model('Mhs_model');
-		
+
 		$username = $this->session->userdata('username');
 		if (!isset($username)) {
 		   redirect('Login/admin');
@@ -50,7 +50,7 @@ class Admin extends CI_Controller{
 			'title'		=> 'Input Data| Sistem Parkir',
 			'content'	=> 'admin_area'
 		);
-		$this->load->view('includes/template', $data);	
+		$this->load->view('includes/template', $data);
 	}
 
 	function list_mhs(){
@@ -59,7 +59,7 @@ class Admin extends CI_Controller{
 			'content'	=> 'list_mhs',
 			'dt'		=> $this->Mhs_model->get_all()
 		);
-		$this->load->view('includes/template', $data);	
+		$this->load->view('includes/template', $data);
 	}
 
 	function edit_mhs(){
@@ -83,7 +83,7 @@ class Admin extends CI_Controller{
 		$data = array(
 			'title'		=> 'Edit Data| Sistem Parkir',
 			'content'	=> 'edit_mhs',
-			'dt'		=> $this->Mhs_model->get_data_byid_mhs($id_mhs)
+			'dt'			=> $this->Mhs_model->get_data_byNim($this->session->userdata('nim'))
 		);
 		$this->load->view('includes/template', $data);
 	}

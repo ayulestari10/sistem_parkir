@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'http://localhost:8080/sistem_parkir/';
+$config['base_url'] = 'http://localhost/sistem_parkir/';
 
 /*
 |--------------------------------------------------------------------------

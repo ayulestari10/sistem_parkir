@@ -15,24 +15,31 @@
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-    <?php  
-      $username   = $this->session->userdata('username');
+    <?php
+      $username    = $this->session->userdata('username');
+      $nim         = $this->session->userdata('nim');
     ?>
         <li>
           <?php if(isset($username)){
-              echo '<a href="'.base_url('admin/list_mhs').'">List Mahasiswa</a>';
+              echo '<a href="'.base_url('Admin/list_mhs').'">List Mahasiswa</a>';
             } ?>
         </li>
 
         <li>
-            <?php 
-                if(!isset($username)){
-                    echo '<a href="'.base_url('login/admin').'" class="btn btn-primary btn-lg" role="button">LOGIN</a>';
+          <?php if(isset($nim)){
+            echo '<a href="'.base_url('Mahasiswa/pernyataan').'">Cetak Pernyataan</a>';
+          }?>
+        </li>
+
+        <li>
+            <?php
+                if(!isset($username) && !isset($nim)){
+                    echo '<a href="'.base_url('Login/Mhs').'" class="btn btn-primary btn-lg" role="button">LOGIN</a>';
                 }
                 else{
-                    echo '<a href="'.base_url('admin/logout_admin').'" class="btn btn-primary btn-lg" role="button">LOGOUT</a>';
+                    echo '<a href="'.base_url('Logout').'" class="btn btn-primary btn-lg" role="button">LOGOUT</a>';
                 }
-            ?>    
+            ?>
         </li>
     </ul>
 

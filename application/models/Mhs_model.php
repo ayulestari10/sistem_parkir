@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 class Mhs_model extends CI_Model{
 	private $table;
@@ -16,7 +16,7 @@ class Mhs_model extends CI_Model{
 	}
 
 	function get_all(){
-		$query = $this->db->get($this->table); 
+		$query = $this->db->get($this->table);
 		return $query->result();
 	}
 
@@ -27,10 +27,10 @@ class Mhs_model extends CI_Model{
 	}
 
 	function get_id_mhs($nim){
-		$this->db->where('nim', $nim); 
+		$this->db->where('nim', $nim);
 		$query = $this->db->get($this->table);
 		foreach ($query->result() as $row) {
-			$id_mhs = $row->id_mhs;			
+			$id_mhs = $row->id_mhs;
 		}
 		return $id_mhs;
 	}
@@ -42,9 +42,9 @@ class Mhs_model extends CI_Model{
 		}
 		return $id_mhs;
 	}
-	
-	function get_data_byid_mhs($id_mhs){
-		$this->db->where($this->key, $id_mhs); 
+
+	function get_data_byNim($nim){
+		$this->db->where('nim', $nim);
 		$query = $this->db->get($this->table);
 		return $query->row();
 	}
@@ -63,24 +63,23 @@ class Mhs_model extends CI_Model{
  		$query = $this->db->query('SELECT * FROM mahasiswa ORDER BY nama ASC');
 		return $query->result();
  	}
-	
+
  	function get_data_za(){
  		$query = $this->db->query('SELECT * FROM mahasiswa ORDER BY nama DESC');
 		return $query->result();
  	}
 
 	function insert($data){
-		return $this->db->insert($this->table, $data); 
+		return $this->db->insert($this->table, $data);
 	}
 
 	function update($id_mhs, $data){
-		$this->db->where($this->key, $id_mhs); 
+		$this->db->where($this->key, $id_mhs);
 		return $this->db->update($this->table, $data);
 	}
 
-
 	function delete($id_mhs){
-		return $this->db->delete($this->table, array($this->key => $id_mhs)); 
+		return $this->db->delete($this->table, array($this->key => $id_mhs));
 	}
 
 	function do_upload($nim){
@@ -94,7 +93,7 @@ class Mhs_model extends CI_Model{
 		);
 
 		$this->load->library('upload', $config);
-		$this->upload->do_upload();	
+		$this->upload->do_upload();
 	}
 
 }

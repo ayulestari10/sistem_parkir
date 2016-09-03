@@ -1,23 +1,17 @@
 <style type="text/css">
 	a{list-style: none;}
 	table{margin-top: 5%;}
-	.box{
-		width: 250px; height: 60px;
-		background-color: rgba(0, 400, 0, 0.5);
-		font-size: 18px; font-weight: bold; text-align: center;
-		margin-bottom: 8%; margin-left: 3%; padding: 2%; margin-top: -20%;
-	}
 </style>
 
 <div class="container">
-	
+
 	<div style="margin-bottom: 10%; text-align: center;">
 		<h1><strong>Input Data Mahasiswa</strong></h1>
 	</div>
-	
+
 	<div class="add">
 
-		<?php  
+		<?php
 			$msg = $this->session->flashdata('msg');
 			if(isset($msg)){
 				echo $msg;
@@ -47,7 +41,7 @@
 		          		<option value="Teknik Informatika (S1 Reguler)">Teknik Informatika (S1 Reguler)</option>
 		              	<option value="Teknik Informatika (S1 Bilingual)">Teknik Informatika (S1 Bilingual)</option>
 		              	<option value="Komputer Akuntansi (D3)">Komputer Akuntansi (D3)</option>
-		              	<option value="Manajemen Infromatika (D3)">Manajemen Infromatika (D3)</option>  
+		              	<option value="Manajemen Infromatika (D3)">Manajemen Infromatika (D3)</option>
 		              	<option value="Sistem Informasi (S1 Reguler)">Sistem Informasi (S1 Reguler)</option>
 		      	        <option value="Sistem Informasi (S1 Profesional)">Sistem Informasi (S1 Profesional)</option>
 		        	      <option value="Sistem Informasi (S1 Bilingual)">Sistem Informasi (S1 Bilingual)</option>
